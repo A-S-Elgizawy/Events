@@ -1,0 +1,111 @@
+<div class="fixed">
+    <div class="fixed-container">
+        <div class="content">
+            <div class="img-container">
+                <img src="https://www.theihs.org/wp-content/uploads/2022/04/8-1-19-DJH_3320-e1649451455599.jpg" alt="">
+            </div>
+            <div class="heading">BILING DETAILS</div>
+        </div>
+    </div>
+</div>
+
+<div class="billing">
+    <div class="billing-container">
+        <div class="content row">
+            <form [formGroup]="myform"   action="" class="col-12 col-lg-6">
+                 <div class="heading">Billing details</div>
+                 <div class="item-con row">
+                    <div class="item col-12 col-lg-6">
+                         <label for="">First Name</label>
+                          <input formControlName="firstName" type="text" placeholder="First Name">
+                   </div>
+                    <div class="item col-12 col-lg-6">
+                         <label for="">last Name</label>
+                          <input formControlName="lastName" type="text" placeholder="last Name">
+                   </div>
+                 </div>
+                 <div class="item">
+                    <label for="">company Name (optional)</label>
+                    <input formControlName="company" type="text" placeholder="company">
+                 </div>
+                 <div class="item">
+                    <label for="">Country / Region</label>
+                    <input formControlName="countery" type="text" placeholder="countery">
+                 </div>
+                 <div class="item">
+                    <label for="">Street Address</label>
+                    <input formControlName="street" type="text" placeholder="Street">
+                 </div>
+                 <div class="item">
+                    <label for="">Town / City</label>
+                    <input formControlName="city" type="text" placeholder="Town / City">
+                 </div>
+                 <div class="item">
+                    <label for="">Phone</label>
+                    <input formControlName="phone" type="tel" placeholder="Phone">
+                 </div>
+                 <div class="item">
+                    <label for="">Email Address</label>
+                    <input formControlName="email" type="email" placeholder="Email address">
+                 </div>
+                 <div class="item">
+                    <label for="">Additional information</label>
+                    <textarea name="" id="" placeholder="Additional information"></textarea>
+                 </div>
+            </form>
+            <!-- <form action="">
+                    <div class="item">
+                    <label for="">Name</label>
+                    <input [(ngModel)]="member.Name" name="Name" type="text" placeholder="Name">
+                 </div>
+                 <div class="item">
+                    <label for="">Age</label>
+                    <input [(ngModel)]="member.Age" name="Age" type="text" placeholder="Age">
+                 </div>
+                 <div class="item">
+                    <label for="">IdentityCard</label>
+                    <input [(ngModel)]="member.IdentityCard" name="IdentityCard" type="text" placeholder="IdentityCard">
+                 </div>
+                 <div class="item">
+                    <label for="">CardNo</label>
+                    <input [(ngModel)]="member.CardNo" name="CardNo" type="text" placeholder="CardNo">
+                 </div>
+                 <div class="item">
+                    <label for="">ContactNo</label>
+                    <input [(ngModel)]="member.ContactNo" name="ContactNo" type="text" placeholder="ContactNo">
+                 </div>
+                 </form> -->
+            <div class="order col-12 col-lg-5">
+                <div class="heading">Your order</div>
+                <div class="product muatual">
+                    <p>Product</p>
+                    <p>Subtotal</p>
+                </div>
+                <div class="data-con">
+                    <div class="data">
+                        <p class="name">{{EventId.eventName}}</p>
+                        <ul>
+                            <li>Date :{{EventId.startmonthName}} {{EventId.startDate | date: 'dd-MM-yy'}} {{EventId.startTime}} am</li>
+                            <li>Location : {{EventId.location}}</li>
+                            <li>Adult - $ 100.00 × {{TickitAdult}} = ${{totaltickitpriceAdult}}.00</li>
+                            <li>Child - $ 50.00 × {{TickitChild}} = ${{totaltickitpriceChild}}.00</li>
+                        </ul>
+                        <p class="total">${{subtotalandtotal}}.0</p>
+                    </div>
+                </div>
+                <div class="subtotal muatual">
+                    <p>subtotal</p>
+                    <p>${{subtotalandtotal}}.00</p>
+                </div>
+                <div class="total muatual">
+                    <p>total</p>
+                    <p>${{subtotalandtotal}}.00</p>
+                </div>
+                <p class="cash">Cash on delivery</p>
+                <p class="pay">pay with cash upon delivery</p>
+                <p class="info">Your personal data will be used to process your order, suppoer your experience throughout this website , and for other purposes described in our <span>Privacy policy</span></p>
+                <button (click)="onSubmit()" [routerLink]="['/checkout', EventId.eventId]"  (click)="toggleAddToCart(EventId)" [disabled]="this.myform.invalid">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>

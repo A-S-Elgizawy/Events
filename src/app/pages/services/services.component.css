@@ -1,0 +1,128 @@
+
+/* fixed part  */
+.fixed .fixed-container{
+    padding: 30px 6%;
+}
+.fixed .fixed-container .content .img-container{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 70%;
+   z-index: -1;
+   overflow: hidden;
+}
+.fixed .fixed-container .content .img-container img{
+   width: 100%;
+   height: 143%;
+   object-fit: cover;
+
+}
+.fixed .fixed-container .content .img-container::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.fixed .fixed-container .heading{
+   color: var(--secondary-color);
+   font-size: clamp(2rem, 6vw, 3rem);
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   text-align: center;
+   font-weight: 600;
+   margin: 1.5rem  0 2rem;
+}
+/* fixed part  */
+
+.service-content{
+    background-color: var(--secondary-color);
+}
+.service-content .service-container {
+    padding: 4rem 10%;
+    margin-top: 3.5rem;
+    
+}
+.service-content .service-container .content {
+    text-align: center;
+}
+.mutaul{
+   color: black;
+   margin-bottom: 2.5rem;
+   position: relative;
+   font-size: clamp(1.5rem, 2vw, 2.5rem);
+   letter-spacing: 1px;
+   font-weight: 600;
+   text-transform: uppercase;
+}
+ .mutaul::after{
+    content: "";
+    width: 10rem;
+    height: 1px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 50%;  
+    transform: translateX(-50%);
+    /* top: 5rem; */
+    bottom: -1.5rem;
+    letter-spacing: 3px;
+}
+.service-content .service-container .content p{
+    font-size: .9rem;
+    color: rgb(80, 80, 80);
+    margin-top: 1.5rem;
+}
+/* .service-content .service-container .content .our-services {
+    width: 75%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+.service-content .service-container .content .our-services .item {
+    text-align: center;
+    /* margin-bottom: 2rem; */
+    padding: 1rem 2rem;
+}
+/* .service-content .service-container .content .our-services .item.right{
+    margin-right: 2rem;
+}
+.service-content .service-container .content .our-services .item.left{
+    margin-left: 2rem;
+} */
+.service-content .service-container .content .our-services .item .img-container{
+    width: 100%;
+    height: 17rem;
+    box-shadow: .5rem .5rem 0 rgb(194, 194, 194);
+}
+/* .service-content .service-container .content .our-services .item .img-container:after{
+
+} */
+.service-content .service-container .content .our-services .item .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.service-content .service-container .content .our-services{
+    margin-top: 4.5rem;
+}
+.service-content .service-container .content .our-services .item h2{
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 1.6rem 1.3rem 1.1rem;
+} 
+.service-content .service-container .content .our-services .item p{
+    font-size: .9rem;
+    color: rgb(80, 80, 80);
+}
+
+@media (max-width:853px) {
+    /* .service-content .service-container .content .our-services {
+    width: 100%;
+} */
+.service-content .service-container .content .our-services .item{
+   padding: 1rem;
+}
+}

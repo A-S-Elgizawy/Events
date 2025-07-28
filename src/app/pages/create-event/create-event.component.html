@@ -1,0 +1,110 @@
+
+<div class="row">
+  <div class="col-8" [ngClass]="issidepanalvisible ? 'col-8' : 'col-12'">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">product List</div>
+          <div class="col-6 text-end"><button class="btn btn-sm btn-success" (click)="opensidepanal()">new</button></div>
+        </div>
+      </div>
+      <div class="card-body scroll">
+         <div class="row ">  
+          <div class="col-lg-3 col-md-4 col-6 mb-3" *ngFor="let item of EventList"> 
+            <div class="card text-center" >
+              <img class="card-img-top" [src]="item.imageUrl" alt="Card image" style=" height: 323px; object-fit: cover;">
+              <div class="card-body">
+                <h4 class="card-title">{{item.eventName}}</h4>
+                <!-- <p class="card-text">{{item.categoryName}}</p> -->
+                <a class="btn btn-primary me-3" (click)="onIdit(item)">Edit</a>
+                <a  class="btn btn-danger" (click)="ondelete(item)">Delete</a>
+              </div>
+            </div>
+          </div> 
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="col-4 position" *ngIf="issidepanalvisible" >
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">New product</div>
+          <div class="col-6 text-end"><button class="btn btn-sm btn-success" (click)="closesidepanal()">close</button></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for=>Price</label>
+            <input type="text" class="form-control"  [(ngModel)]="eventObj.price">
+          </div>
+
+          <div class="col-6">
+            <label for=>description</label>
+            <textarea type="text" class="form-control"  required [(ngModel)]="eventObj.description"></textarea>
+          </div>
+          <div class="col-6">
+            <label for=>location</label>
+            <input type="text" class="form-control" required  [(ngModel)]="eventObj.location">
+          </div>
+          <div class="col-6">
+            <label for=>Start Date</label>
+            <input type="date" class="form-control" required  [(ngModel)]="eventObj.startDate">
+          </div>
+          <div class="col-6">
+            <label for=>end Date</label>
+            <input type="date" class="form-control" required  [(ngModel)]="eventObj.endDate">
+          </div>
+          <div class="col-6">
+            <label for=>start Time</label>
+            <input type="time" class="form-control" required  [(ngModel)]="eventObj.startTime">
+          </div>
+          <div class="col-6">
+            <label for=>end Time</label>
+            <input type="time" class="form-control" required  [(ngModel)]="eventObj.endTime">
+          </div>
+          <div class="col-6">
+            <label for=>capacity</label>
+            <input type="text" class="form-control" required  [(ngModel)]="eventObj.capacity">
+          </div>
+          <div class="col-6">
+            <label for=>Event Name</label>
+            <input type="text" class="form-control" required  [(ngModel)]="eventObj.eventName">
+          </div>
+<div class="col-6">
+  <label>Identity Mandatory</label>
+  <select class="form-control" [(ngModel)]="eventObj.isIdentityMandatory" name="isIdentityMandatory" required>
+    <option [ngValue]="true">Yes</option>
+    <option [ngValue]="false">No</option>
+  </select>
+</div>
+<div class="col-6">
+  <label>Couple Entry Mandatory</label>
+  <select class="form-control" [(ngModel)]="eventObj.isCoupleEntryMandatory" name="isCoupleEntryMandatory" required>
+    <option [ngValue]="true">Yes</option>
+    <option [ngValue]="false">No</option>
+  </select>
+</div>
+          <!-- <div class="col-6">
+            <label for=>organizer</label>
+            <input type="text" class="form-control" required  [(ngModel)]="eventObj.organizerName">
+          </div> -->
+          <div class="col-12">
+            <label for=>ImageUrl</label>
+            <input type="text" class="form-control" required [(ngModel)]="eventObj.imageUrl" >
+          </div>
+        </div>
+        <div class="row">
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 text-end">
+            <button class="btn btn-success" type="submit" *ngIf="eventObj.eventId == 0" (click)="onSave()">creat product</button>
+            <button class="btn btn-primary" *ngIf="eventObj.eventId !== 0" (click)="onupdate()">update product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,124 @@
+
+/* fixed part  */
+.fixed .fixed-container{
+    padding: 30px 6%;
+}
+.fixed .fixed-container .content .img-container{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 70%;
+   z-index: -1;
+   overflow: hidden;
+}
+.fixed .fixed-container .content .img-container img{
+   width: 100%;
+   height: 143%;
+   object-fit: cover;
+
+}
+.fixed .fixed-container .content .img-container::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.fixed .fixed-container .heading{
+   color: var(--secondary-color);
+   font-size: clamp(2rem, 6vw, 3rem);
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   text-align: center;
+   font-weight: 600;
+   margin: 1.5rem  0 2rem;
+}
+/* fixed part  */
+
+.container-input {
+    margin-top: 3.5rem;
+    background-color: var(--secondary-color);
+    padding: 4rem 10%;
+}
+.container-input .contact-inputs .my-data{
+    padding-left: 1.8rem;
+}
+.container-input .contact-inputs .your-data{
+    padding-right: 1.8rem;
+}
+.container-input .contact-inputs .your-data .card-data h2{
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.container-input .contact-inputs .your-data .card-data form input{
+   height: 3rem;
+   width: 100%; 
+   font-size: .8rem;
+   padding: .5rem;
+   margin-bottom: 1.5rem;
+   outline: none;
+}
+.container-input .contact-inputs .your-data .card-data form input:active,
+.container-input .contact-inputs .your-data .card-data form input:focus{
+   border: 1px solid var(--primary-color);
+}
+
+.container-input .contact-inputs .your-data .card-data form textarea{
+   height: 6rem;
+   width: 100%; 
+   font-size: .8rem;
+   padding: .5rem;
+   margin-bottom: 2rem;
+   resize: none;
+   background-color: white;
+   outline: none;
+}
+.container-input .contact-inputs .your-data .card-data form textarea:active,
+.container-input .contact-inputs .your-data .card-data form textarea:focus{
+   border: 1px solid var(--primary-color);
+}
+.container-input .contact-inputs .my-data .card-data h2{
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+} 
+.container-input .contact-inputs .my-data .card-data .head{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+} 
+.container-input .contact-inputs .my-data .card-data .datails{
+    font-size: .9rem;
+    color: rgb(80, 80, 80);
+    margin-bottom: 1.3rem;
+} 
+.container-input .contact-inputs .my-data .card-data .social{
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+}
+.container-input .contact-inputs .my-data .card-data .social span{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    transition: .5s ease;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.container-input .contact-inputs .my-data .card-data .social span:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+/* .container-input .contact-inputs .my-data .card-data .sochial span */

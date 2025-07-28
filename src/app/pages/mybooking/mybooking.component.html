@@ -1,0 +1,52 @@
+<div class="fixed">
+    <div class="fixed-container">
+        <div class="content">
+            <div class="img-container">
+                <img src="https://www.theihs.org/wp-content/uploads/2022/04/8-1-19-DJH_3320-e1649451455599.jpg" alt="">
+            </div>
+            <div class="heading">YOUR BOOKING</div>
+        </div>
+    </div>
+</div>
+          <div class="mybooking">
+           <div class="mybooking-container">
+            <div class="item col-12 " *ngFor="let item of Events">
+                <div class="data" >
+                    <div class="img-container" >
+                                <img [src]="item.imageUrl" alt="">
+                                <div class="date">
+                                    <p class="daynumber">{{item.startmonthNumber}}</p>
+                                    <p>{{item.startmonthName}}</p>
+                                </div>
+                         </div>
+                         <div class="info-container">
+                            <div class="con-name-price">
+                            <p class="name">{{item.eventName}}</p>
+                            <p class="price">price : <span class="price-number">${{item.price}}.00</span></p>
+                            </div>
+                            <div class="con-items">
+                            <div class="item">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <p>Organized By : <span class="organizer">{{item.organizerName}}</span></p>
+                            </div>
+                            <div class="item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Location : <span class="location">{{item.location}}</span></p>
+                            </div>
+                            <div class="item">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="date">
+                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.startDate | date: 'dd-MM-yy'}}</p> 
+                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.endDate | date: 'dd-MM-yy'}} </p>
+                                </div>
+                            </div>
+                            <!-- <button>Let's Go</button> -->
+                            </div>
+                     </div>
+              </div>
+              </div>
+            <div class="empty">
+          <img src="https://aleointernational.com/img/empty-cart-yellow.png" alt="">
+         </div>
+              </div>
+              </div>

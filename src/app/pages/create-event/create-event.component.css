@@ -1,0 +1,16 @@
+div{
+    font-size: 2rem;
+}
+:is(div) :is(input,select,textarea,button){
+    font-size: 1.5rem;
+}
+
+.position {
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+.scroll{
+    height: 600px;
+    overflow-y: scroll;
+}
