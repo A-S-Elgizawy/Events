@@ -1,0 +1,191 @@
+   <div class="fixed">
+    <div class="fixed-container">
+        <div class="content">
+            <div class="img-container">
+                <img src="https://www.theihs.org/wp-content/uploads/2022/04/8-1-19-DJH_3320-e1649451455599.jpg" alt="">
+            </div>
+            <div class="heading">EVENT DETAILS</div>
+        </div>
+    </div>
+</div>              
+            
+    <div class="event-details">
+        <div class="event-container">
+             <div class="content row " *ngIf="Event as item">
+                 <div class="part-left col-12 col-md-12 col-lg-9">
+                    <div class="card-item">
+                        <h2>{{item.eventName}}</h2>
+                        <div class="img-container">
+                            <img [src]="item.imageUrl" alt="">
+                        </div>
+                        <div class="items-container">
+                        <div class="items">
+                            <div class="icon">
+                            <div class="icon-container"><i class="fa-solid fa-calendar-week"></i></div>
+                            </div>
+                            <div class="data">
+                                <p class="head">Event Date:</p>
+                                <p class="info"> {{item.startmonthName}} {{item.startDate | date:'dd-MM-yy'}}</p>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="icon">
+                            <div class="icon-container"><i class="fa-solid fa-clock"></i></div>
+                            </div>
+                            <div class="data">
+                                <p class="head">Event Time:</p>
+                                <p class="info">{{item.startTime}} am</p>
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="icon">
+                            <div class="icon-container"><i class="fa-solid fa-location-dot"></i></div>
+                            </div>
+                            <div class="data">
+                                <p class="head">Event Location:</p>
+                                <p class="info">{{item.location}}</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="describtion">
+                            <p>{{item.description}}</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, cumque aliquid inventore, vero eum debitis temporibus quisquam accusamus magnam expedita laboriosam, quidem earum repellat omnis enim consequatur iure dolor doloremque.</p>
+                        </div>
+                        <div class="event-line">
+                            <h2>Event timelines</h2>
+                            <div class="event-line-items">
+                                <p class="head">Arrival and Registration</p>
+                                <p class="info">Arrival and registration time is 7am</p>
+                            </div>
+                            <div class="event-line-items">
+                                <p class="head">Opening Prayer</p>
+                                <p class="info">{{item.startmonthName}} {{item.startDate | date:'dd-MM-yy'}}</p>
+                            </div>
+                            <div class="event-line-items">
+                                <p class="head">Welcome Message by Director of Dikupages Web</p>
+                                <p class="info">Director welcomes participants</p>
+                            </div>
+                            <div class="event-line-items">
+                                <p class="head">Closing remarks by CEO</p>
+                                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci dolores, eaque animi nostrum corrupti laudantium perspiciatis id nobis qui.</p>
+                            </div>
+                        </div>
+                        <div class="register">
+                            <h2>Register Now:</h2>
+                            <table>
+                                <tr class="head">
+                                    <td>Ticket type:</td>
+                                    <td>Ticket Qty:</td>
+                                    <td>per Ticket Price:</td>
+                                </tr>
+                                <tr class="body">
+                                    <td class="adult">
+                                        <p class="p">Adult</p>
+                                        <p>this ticketis valid ofr those above the age of 12 years old</p>
+                                    </td>
+                                    <td class="flex">
+                                        <div class="minus" (click)="decreaseAdult()">-</div>
+                                        <div class="number ">{{ ticketAdult }}</div>
+                                        <div class="plus " (click)="increaseAdult()">+</div>
+                                    </td>
+                                    <td class="quan">
+                                        <div class="quantityAdult">${{totalAdultPrice}}.00</div>
+                                    </td>
+                                </tr>
+                                <tr class="body">
+                                    <td class="Child">
+                                        <p class="p">Child</p>
+                                        <p>this ticketis valid ofr those under the age of 12 years old</p>
+                                    </td>
+                                    <td class="flex">
+                                        <div class="minus" (click)="decreaseChild()">-</div>
+                                        <div class="number">{{ ticketChild }}</div>
+                                        <div class="plus" (click)="increaseChild()">+</div>
+                                    </td>
+                                    <td class="quan">
+                                        <div class="quantityChild">${{ totalChildPrice }}.00</div>
+                                    </td>
+                                </tr>
+                                </table>
+                                
+                                <div class="footer">
+                                    <div class="foot">
+                                        <p class="quantity">Quantity: <span class="quantitynumber">{{ totalTickets }}</span></p>
+                                        <p class="total">Total: <span class="Totalnumber">${{ totalPrice }}.00</span></p>
+                                    </div>
+                                    <div class="foot ">
+                                        <div class="registerEvent" [routerLink]="['/billing', Event.eventId]">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                            <p>REGISTER FOR THIS EVENT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>  
+                 </div>
+                        
+                 <div class="part-right col-12 col-md-12 col-lg-3 " *ngIf="Event as item">
+                    <div class="card-item">
+                         <p class="heading">Total Seats:150 (145 Left:)</p>
+                         <div class="first-part">
+                         <div class="con-organizer">
+                             <i class="fa-solid fa-circle-user"></i>
+                             <p class="organizer">By : Unknown<span>{{item.organizerName}}</span> </p>
+                         </div>
+                         <div class="data">
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-solid fa-arrow-right"></i></div>
+                                <p>Tamale City Hall</p>
+                            </div>
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-solid fa-arrow-right"></i></div>
+                                <p>Salaga Road</p>
+                            </div>
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-solid fa-arrow-right"></i></div>
+                                <p>Tamale</p>
+                            </div>
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-solid fa-arrow-right"></i></div>
+                                <p>Northern</p>
+                            </div>
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-solid fa-arrow-right"></i></div>
+                                <p>Ghana</p>
+                            </div>
+                         </div>
+                        </div>
+                        <div class="first-part">
+                         <div class="con-organizer">
+                             <i class="fa-solid fa-calendar-days"></i>
+                             <p class="organizer">Event Schedule Details</p>
+                         </div>
+                         <div class="data">
+                            <div class="item">
+                                <div class="icon">
+                                <div class="icon-con"><i class="fa-solid fa-calendar-days"></i></div>
+                                </div>
+                                <p>{{item.startDate | date : 'dd-MM-yy'}} <br> {{item.endDate | date : 'dd-MM-yy'}}</p>
+                                
+                            </div>
+                         </div>
+                        </div>
+                        <div class="third-part">
+                             <p class="organizer">Share Events</p>
+                         <div class="data">
+                            <div class="item">
+                                <div class="icon-con"><i class="fa-brands fa-facebook-f"></i></div>
+                                <div class="icon-con"><i class="fa-brands fa-twitter"></i></div>
+                                <div class="icon-con"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="icon-con"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div class="icon-con"><i class="fa-solid fa-envelope"></i></div>
+                            </div>
+                         </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+        </div>
+    </div>
+        
+            

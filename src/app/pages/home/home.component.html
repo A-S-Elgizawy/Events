@@ -1,0 +1,115 @@
+
+
+<div class="event">
+    <div class="event-container">
+        <div class="event-content">
+            <div class="img-container con1 activeone">
+                <img src="https://www.theihs.org/wp-content/uploads/2022/04/8-1-19-DJH_3320-e1649451455599.jpg" alt="">
+            </div>
+            <div class="img-container con2">
+                <img src="https://www.mccormick.northwestern.edu/images/news/2025/01/study-reveals-why-in-person-conferences-still-matter-in-a-virtual-world-social.jpg" alt="">
+            </div>
+            <div class="info">
+            <h4 class="mutaul">Wlcome To Event Manager</h4>
+             <h1 >your ultimate event</h1>
+             <h1>Planning partner</h1>
+            <button routerLink="/about">Learn more</button>
+            </div>
+        </div>
+</div>
+</div>
+<div class="upcoming-event">
+  <div class="upcoming-container">
+    <div class="upcoming-event-content">
+        <p class="center">"Event Manager tutned my wedding into a fairytale. I couldn't have asked for a more perfect day."</p>
+        <p class="center">- Sarah T</p>
+        <div class="upcoming-content">
+            <h4 class="mutaul shdow">upcoming-event</h4>
+                 <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let item of EventList">
+                            <div class="img-container" >
+                                <img [src]="item.imageUrl" alt="">
+                                <div class="date">
+                                    <p>{{item.startmonthNumber}}</p>
+                                    <p>{{item.startmonthName}}</p>
+                                </div>
+                            </div>
+                            <div class="info-container">
+                            <div class="con-name-price">
+                            <p class="name">{{item.eventName}}</p>
+                            <p class="price">price : <span class="price-number">${{item.price}}.00</span></p>
+                            </div>
+                            <div class="con-items">
+                            <div class="item">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <p>Organized By : <span class="organizer">{{item.organizerName}}</span></p>
+                            </div>
+                            <div class="item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Location : <span class="location">{{item.location}}</span></p>
+                            </div>
+                            <div class="item">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="date">
+                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.startDate | date: 'dd-MM-yy'}}</p> 
+                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.endDate | date: 'dd-MM-yy'}} </p>
+                                </div>
+                            </div>
+                            <button class="btnspecial" [routerLink]="['/event-details/',item.eventId]">Let's Go</button>
+                            </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+                </div> 
+            </div>
+    </div>
+  </div>  
+</div>
+
+<div class="partner">
+    <div class="partner-container">
+        <div class="content">
+            <div class="info">
+            <h1 class="mutaul">become our partner</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla perspiciatis quis quia.</p>
+            <button routerLink="/contact" routerLinkActive="Active">Contact us</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="notable">
+    <div class="notable-container">
+        <div class="content row">
+            <div class="text-content col-12  col-lg-4">
+            <h1 class="mutaul">Notable Events in pictures</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolore reprehenderit dicta? Laboriosam labore distinctio odio soluta est earum ratione expedita voluptate temporibus.</p>
+            <button routerLink="/events" routerLinkActive="Active">More Events</button>
+            </div>
+            <div class="img-content col-12  col-lg-7">
+               <div class="photos left">
+                <div class="img-con first">
+                    <img src="https://www.eduwinnow.com/img/14b98500914b81ef6529ed8415f9f875.jpg?11" alt="">
+                </div>
+                <div class="img-con end">
+                    <img src="https://wildlandtrekking.com/content/uploads/2020/12/northcascades-1200x901.jpg" alt="">
+                </div>
+               </div> 
+               <div class="photos right">
+                <div class="img-con end">
+                    <img src="https://www.swedishlapland.com/wp-content/uploads/resized/99/388_CDuncan_1920x1080_1920x1080_94ce758c9d39a73d96c87822c760e112.jpg" alt="">
+                </div>
+                <div class="img-con first">
+                    <img src="https://www.menaconference.com//uploads/conf1.jpg" alt="">
+                </div>
+               </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+

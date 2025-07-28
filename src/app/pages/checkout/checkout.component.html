@@ -1,0 +1,93 @@
+
+<div class="fixed">
+    <div class="fixed-container">
+        <div class="content">
+            <div class="img-container">
+                <img src="https://www.theihs.org/wp-content/uploads/2022/04/8-1-19-DJH_3320-e1649451455599.jpg" alt="">
+            </div>
+            <div class="heading">CHECKOUT</div>
+        </div>
+    </div>
+</div>
+
+<div class="checkout">
+    <div class="checkout-container">
+        <div class="content">
+            <h1>CHECKOUT</h1>
+            <p class="tank">Thank you, Your order has been received</p>
+            <div class="item-container row">
+            <div class="item col-12 col-lg-2 col-md-5">
+               <p class="head">ORDER NUMBER:</p> 
+               <div class="info">654</div>
+            </div>
+            <div class="item  col-12 col-lg-2 col-md-5">
+               <p class="head">DATE:</p> 
+               <div class="info"> {{registerDate}}</div>
+            </div>
+            <div class="item  col-12 col-lg-2 col-md-5">
+               <p class="head">EMAIL:</p> 
+               <div class="info">{{myform.email}}</div>
+            </div>
+            <div class="item  col-12 col-lg-2 col-md-5">
+               <p class="head">TOTAL:</p> 
+               <div class="info">${{subtotalandtotal}}.00</div>
+            </div>
+            <div class="item  col-12 col-lg-2 col-md-5">
+               <p class="head">BAYMENT METHOD:</p> 
+               <div class="info">Cash on delivery</div>
+            </div>
+            </div>
+            <p class="pay">pay with cash upon delivery</p>
+            <div class="box-container">
+                <table>
+                    <tr class="headingback">
+                        <td class="Heading">ORDER DETAILS</td>
+                        <td class="Heading"></td>
+                    </tr>
+                    <tr >
+                        <td class="bold right">Product</td>
+                        <td class="bold">Total</td>
+                    </tr>
+                    <tr>
+                        <td class="right">
+                            <p>- Date : {{EventId.startmonthName}} {{EventId.startDate | date:'dd-MM-yy'}} {{EventId.startTime}} am</p>
+                            <p>- Adult : $100.00 × {{TickitAdult}} = <span class="total">${{totaltickitpriceAdult}}.00</span></p>
+                            <p>- child : $50.00 × {{TickitChild}} = <span class="total">${{totaltickitpriceChild}}.00</span></p>
+                            <p>- Location : {{EventId.location}}</p>
+                        </td>
+                        <td>${{subtotalandtotal}}.00</td>
+                    </tr>
+                    <tr>
+                        <td class="right">Subtotal:</td>
+                        <td>${{subtotalandtotal}}.00</td>
+                    </tr>
+                    <tr>
+                        <td class="right">Payment method:</td>
+                        <td>Cash on delivery</td>
+                    </tr>
+                    <tr>
+                        <td class="right">Total:</td>
+                        <td>${{subtotalandtotal}}.00</td>
+                    </tr>
+                </table>
+                <table class="tabletwo">
+                    <tr class="headingback">
+                        <td class="Heading">BILLING ADDRESS</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><i class="fa-solid fa-circle-user"></i> {{myform.firstName}} {{myform.lastName}}</p>
+                            <p><i class="fa-solid fa-location-dot"></i> {{myform.countery}}</p>
+                            <p><i class="fa-solid fa-location-crosshairs"></i> {{myform.city}}</p>
+                            <p><i class="fa-solid fa-location-crosshairs"></i> {{myform.street}}</p>
+                            <p><i class="fa-solid fa-phone"></i> {{myform.phone}}</p>
+                            <p><i class="fa-solid fa-envelope"></i> {{myform.email}}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

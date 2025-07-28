@@ -1,0 +1,114 @@
+
+<header>
+  <li class="logo">Event Manager</li>
+  <nav>
+    <ul class="">
+      <li class="link" routerLink="/home" routerLinkActive="Active">Home</li>
+      <li class="link" routerLink="/events" routerLinkActive="Active">Event</li>
+      <li class="link" routerLink="/about" routerLinkActive="Active">About</li>
+      <li class="link" routerLink="/services" routerLinkActive="Active">Services</li>
+      <li class="link" routerLink="/contact" routerLinkActive="Active">Contact</li>
+      <!-- @if(userLogged !== undefined){ -->
+      <li class="link cart" routerLink="/mybooking" routerLinkActive="Active">
+        Booking
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="number-con">
+          <span>{{Events.length}}</span>
+        </div>
+      </li>
+    <!-- } -->
+      <!-- <button class="traiengle"></button>
+      <div class="log-con">
+       @if(userLogged == undefined){ 
+         <li class="log logReg" (click)="openModel()"><span >Login / Register</span></li> 
+       }@else{ 
+         <li class="log logout" ><p>{{userLogged.contactNo}}</p><span (click)="logout()">LogOut</span></li> 
+      }
+      </div> -->
+       
+    </ul>
+  </nav>
+  <i class="fa-solid fa-bars-staggered menu " ></i>
+
+</header>
+  <div class="color">
+  <div class="mutaul one ">
+    <div class="col color1"></div>
+    <i class="fa-solid fa-check"></i>
+  </div>
+  <div class="mutaul two">
+    <div class="col color2"></div>
+    <i class="fa-solid fa-check"></i>
+  </div>
+  <div class="mutaul three">
+        <div class="col color3"></div>
+    <i class="fa-solid fa-check"></i>
+  </div>
+  <div class="mutaul four">
+        <div class="col color4"></div>
+    <i class="fa-solid fa-check"></i>
+  </div>
+  <div class="arrow"></div>
+</div>
+<!-- scroll up  -->
+<div class="up">
+    <div class="mini-circle">
+    <i class="fa-solid fa-arrow-up"></i>
+    </div>
+</div>
+<!-- scroll up  -->
+<router-outlet></router-outlet>
+<div class="footer">
+    <div class="footer-container">
+        <div class="footer-content row">
+            <p class=" col-12  col-lg-6" >E-EXT. 379 | Phone: + 01012885168 | Email: Ahmed571&#64;gmail.com</p>
+            <p class=" col-12 col-lg-6 ">Copyright &copy; 2025 Event Manager | Made By: A.S.G</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="form-container" #Model>
+
+  @if(islogged){
+    <form action="" class="LogIn login"  id="LogIn" >
+      <div class="login-container">
+          <div class="login-content">
+            <div class="title-close">
+              <div class="title">Login</div>
+              <i class="fa-solid fa-xmark" (click)="closeModel()"></i>
+            </div>
+            <label for="">contactNo</label>
+            <input type="email" name="contactNo" [(ngModel)]="loginObj.contactNo">
+            <label for="">password</label>
+            <input type="password" name="password" [(ngModel)]="loginObj.password">
+            <button (click)="onLogIn()">Login</button>
+            <p >Don't have an account? <a class="regiterbtn" (click)="islogged=false">register here</a></p>
+          </div>
+      </div>
+    </form> 
+  }@else{
+    <form action="" class="login Register" id="Register" #Model>
+      <div class="login-container">
+          <div class="login-content register">
+            <div class="title-close">
+              <div class="title">Register</div>
+              <i class="fa-solid fa-xmark" (click)="closeModel()"></i>
+            </div>
+            <label for="">Name</label>
+            <input type="text" name="name" [(ngModel)]="userObj.name">
+            <label for="">Email</label>
+            <input type="email" name="emailId" [(ngModel)]="userObj.email">
+            <label for="">contactNo</label>
+            <input type="tel" name="ContactNo" [(ngModel)]="userObj.contactNo">
+            <label for="">password</label>
+            <input type="password" name="password" [(ngModel)]="userObj.password">
+            <button (click)="onRegister()">Register</button>
+            <p>Already have an account? <a class="loginbtn" (click)="islogged=true">Login here</a></p>
+          </div>
+      </div>
+    </form>
+  }
+  </div>
