@@ -20,12 +20,7 @@ export class EventService {
    GetAllEvents(){
      return this.http.get(`${this.APiUrl}GetAllEvents`)
   }
-  //  GetEventsById(id:number){
-  //    return this.http.get<IEvent>(`${this.APiUrl}GetEventById?id=`+ id).pipe(
-  //     map((item:any)=>{
-  //     return item.data
-  //    }))
-  // }
+
    GetEventsById(id:number){
      return this.http.get(`${this.APiUrl}GetEventById?id=`+ id)
   }
