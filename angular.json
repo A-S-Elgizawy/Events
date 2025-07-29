@@ -36,18 +36,18 @@
           },
           "configurations": {
             "production": {
-"baseHref": "/popcorn-room/",       
-              "budgets": [
-  {
-    "type": "initial",
-    "maximumWarning": "2mb",
-    "maximumError": "3mb"
-  },
-  {
-    "type": "anyComponentStyle",
-    "maximumWarning": "10kb",
-    "maximumError": "15kb"
-  }
+            "baseHref": "/popcorn-room/",       
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "3mb"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "10kb",
+                "maximumError": "15kb"
+              }
               ],
               "outputHashing": "all"
             },
