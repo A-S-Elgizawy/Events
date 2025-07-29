@@ -122,3 +122,10 @@
     color: var(--primary-color);
 }
 /* .container-input .contact-inputs .my-data .card-data .sochial span */
+
+@media (max-width:768px) {   
+.container-input {
+    padding: 4rem 5%;
+}
+    
+}

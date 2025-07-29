@@ -156,7 +156,6 @@ togglenavebar(){
    const navbar =document.querySelector("header nav ul")
    menu?.addEventListener("click",()=>{
       navbar?.classList.toggle("active")
-      console.log("yes"); 
       blurnav()
    })
 

@@ -1,7 +1,7 @@
 
 /* fixed part  */
 .fixed .fixed-container{
-    padding: 30px 6%;
+    padding: 30px 5%;
 }
 .fixed .fixed-container .content .img-container{
    position: fixed;
@@ -76,7 +76,7 @@
 }  
 .events .event-container .search-container input{
     height: 100%;
-    width: calc(100% - 5%);
+    width: 95%;
     padding: 1.5rem;
     outline: none;
     font-size: 1.2rem;
@@ -103,6 +103,12 @@
 .events .event-container .search-container .icon-con i{
     font-size: 1rem;
 }
+/* .events .event-container .items-container{
+    width: 100%;
+} */
+/* .events .event-container .items-container .item{
+    width: 100%;
+} */
 .events .event-container .items-container .item .data{
     margin-top: 3rem;
 }
@@ -110,6 +116,7 @@
     height: 14rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .events .event-container .items-container .item .data .img-container .date{
@@ -228,4 +235,11 @@
   .events .event-container .items-container .item:hover button{
     opacity: 1;
     right: 0;
+  }
+
+  @media (max-width:768px) {
+.events .event-container {
+    padding: 4rem 5%;
+    overflow-x: hidden;
+}
   }

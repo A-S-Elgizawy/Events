@@ -404,7 +404,6 @@ z-index: 101;
     header nav ul {
         flex-direction: column;
         position: absolute;
-        
         top: 95px;
         padding: 5px 6%;
         left: 0;
@@ -472,5 +471,8 @@ z-index: 101;
 @media (max-width:500px) {
     .login .login-container .login-content{
         width: 87%;
+    }
+    header{
+        padding: 30px 5%;
     }
 }

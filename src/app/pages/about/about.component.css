@@ -86,8 +86,16 @@
     object-fit: cover;
 }
 
-@media (max-width:850px) {
+@media (max-width:768px) {
     .about .about-container .content .data{
         padding: 1rem;
     }
+    .about .about-container{
+    padding: 5.5rem 5%;
+    margin-top: 3.5rem;
+}
+.mutaul{
+    font-size: clamp(1.2rem,2vw,2rem);
+    font-weight: 600;
+}
 }

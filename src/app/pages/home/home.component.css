@@ -123,7 +123,7 @@ object-position: center;
    color: var(--secondary-color);
    margin-bottom: 2.5rem;
    position: relative;
-   font-size: clamp(1.5rem, 2vw, 2.5rem);
+   font-size: clamp(1.2rem, 2vw, 2.5rem);
    letter-spacing: 1px;
 }
  .mutaul::after{
@@ -141,7 +141,7 @@ object-position: center;
 }
 .event .event-container .event-content .info h1{
    color: var(--secondary-color);
-   font-size: clamp(2rem, 6vw, 2.6rem);
+   font-size: clamp(1.2rem, 6vw, 2.6rem);
    text-transform: uppercase;
    letter-spacing: 3px;
    font-weight: 600;
@@ -368,7 +368,9 @@ border: 1px solid var(--primary-color);
 .partner .partner-container .content .info{
     text-align: center;
 }
-
+.partner .partner-container .content p{
+  font-size: 1.2rem;
+}
 /* ====================== partner =========================  */
 /* ====================== notable =========================  */
 .notable{
@@ -386,6 +388,9 @@ border: 1px solid var(--primary-color);
 }
 .notable .notable-container .content .text-content{
     margin-bottom: 3rem;
+}
+.notable .notable-container .content p{
+text-align: justify;
 }
 .notable .notable-container .content .text-content .mutaul{
     color: black;
@@ -425,4 +430,22 @@ border: 1px solid var(--primary-color);
     object-fit: cover;
 }
 /* ====================== notable =========================  */
+@media (max-width:768px) {
+.event .event-container {
+    padding: 1rem 5%;
+}
+.partner .partner-container{
+    padding: 7rem 5%;
+}
+.notable .notable-container{
+    padding: 7rem 5%;
+}
+.upcoming-container{
+    padding:  5rem 5%;
+}
+.event .event-container .event-content .info{
+    text-align: center;
+    margin-top: 6rem;
+}
+}
 

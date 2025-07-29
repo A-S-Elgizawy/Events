@@ -118,11 +118,16 @@
     color: rgb(80, 80, 80);
 }
 
-@media (max-width:853px) {
-    /* .service-content .service-container .content .our-services {
-    width: 100%;
-} */
+@media (max-width:786px) {
+
 .service-content .service-container .content .our-services .item{
    padding: 1rem;
 }
+.mutaul{
+   font-size: clamp(.9rem, 2vw, 2.5rem);
+}
+.service-content .service-container {
+    padding: 4rem 5%;   
+}
+
 }
