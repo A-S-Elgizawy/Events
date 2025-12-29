@@ -18,6 +18,7 @@
         </div>
 </div>
 </div>
+
 <div class="upcoming-event">
   <div class="upcoming-container">
     <div class="upcoming-event-content">
@@ -25,6 +26,9 @@
         <p class="center">- Sarah T</p>
         <div class="upcoming-content">
             <h4 class="mutaul shdow">upcoming-event</h4>
+                <div class="loader" *ngIf="EventList.length == 0">
+                    <div class="justify-content-center jimu-primary-loading"></div>
+                </div>
                  <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" *ngFor="let item of EventList">
@@ -37,26 +41,26 @@
                             </div>
                             <div class="info-container">
                             <div class="con-name-price">
-                            <p class="name">{{item.eventName}}</p>
-                            <p class="price">price : <span class="price-number">${{item.price}}.00</span></p>
+                            <p class="name">{{item.EventName}}</p>
+                            <p class="price">price : <span class="price-number">${{item.EventPrice}}.00</span></p>
                             </div>
                             <div class="con-items">
                             <div class="item">
                                 <i class="fa-solid fa-circle-user"></i>
-                                <p>Organized By : <span class="organizer">{{item.organizerName}}</span></p>
+                                <p>Organized By : <span class="organizer">{{item.organizedName}}</span></p>
                             </div>
                             <div class="item">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>Location : <span class="location">{{item.location}}</span></p>
+                                <p>Location : <span class="location">{{item.EventLocation}}</span></p>
                             </div>
                             <div class="item">
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <div class="date">
-                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.startDate | date: 'dd-MM-yy'}}</p> 
-                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.endDate | date: 'dd-MM-yy'}} </p>
+                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.StartDate | date: 'dd-MM-yy'}}</p> 
+                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.EndDate | date: 'dd-MM-yy'}} </p>
                                 </div>
                             </div>
-                            <button class="btnspecial" [routerLink]="['/event-details/',item.eventId]">Let's Go</button>
+                            <button class="btnspecial" [routerLink]="['/event-details/',item.id]">Let's Go</button>
                             </div>
                             </div>
                         </div>
@@ -88,7 +92,7 @@
             <div class="text-content col-12  col-lg-4">
             <h1 class="mutaul">Notable Events in pictures</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolore reprehenderit dicta? Laboriosam labore distinctio odio soluta est earum ratione expedita voluptate temporibus.</p>
-            <button routerLink="/events" routerLinkActive="Active">More Events</button>
+            <button class="more" routerLink="/events" routerLinkActive="Active">More Events</button>
             </div>
             <div class="img-content col-12  col-lg-7">
                <div class="photos left">

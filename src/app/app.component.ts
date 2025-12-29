@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from 
 import { NavigationEnd, Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { EventService } from './events/event.service';
 import { HttpClient } from '@angular/common/http';
-import { login, User } from './model/model';
 import { FormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 
@@ -212,7 +211,7 @@ togglenavebar(){
     this.Model.nativeElement.style.display = 'none'
   }
 
-  userObj: User={
+  userObj: any={
   "userId": 0,
   "name": "",
   "email": "",
@@ -235,7 +234,7 @@ togglenavebar(){
     })
   }
 
-  loginObj:login={
+  loginObj:any={
   "password": "",
   "contactNo": ""
   }

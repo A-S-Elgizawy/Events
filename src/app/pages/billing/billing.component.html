@@ -104,7 +104,7 @@
                 <p class="cash">Cash on delivery</p>
                 <p class="pay">pay with cash upon delivery</p>
                 <p class="info">Your personal data will be used to process your order, suppoer your experience throughout this website , and for other purposes described in our <span>Privacy policy</span></p>
-                <button (click)="onSubmit()" [routerLink]="['/checkout', EventId.eventId]"  (click)="toggleAddToCart(EventId)" [disabled]="this.myform.invalid">Place Order</button>
+                <button (click)="onSubmit()" [routerLink]="['/checkout', EventId.id]"  (click)="toggleAddToCart(EventId)" [disabled]="this.myform.invalid">Place Order</button>
             </div>
         </div>
     </div>

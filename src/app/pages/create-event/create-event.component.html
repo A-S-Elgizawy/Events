@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="row">
   <div class="col-8" [ngClass]="issidepanalvisible ? 'col-8' : 'col-12'">
     <div class="card">
@@ -15,7 +15,6 @@
               <img class="card-img-top" [src]="item.imageUrl" alt="Card image" style=" height: 323px; object-fit: cover;">
               <div class="card-body">
                 <h4 class="card-title">{{item.eventName}}</h4>
-                <!-- <p class="card-text">{{item.categoryName}}</p> -->
                 <a class="btn btn-primary me-3" (click)="onIdit(item)">Edit</a>
                 <a  class="btn btn-danger" (click)="ondelete(item)">Delete</a>
               </div>
@@ -86,10 +85,7 @@
     <option [ngValue]="false">No</option>
   </select>
 </div>
-          <!-- <div class="col-6">
-            <label for=>organizer</label>
-            <input type="text" class="form-control" required  [(ngModel)]="eventObj.organizerName">
-          </div> -->
+
           <div class="col-12">
             <label for=>ImageUrl</label>
             <input type="text" class="form-control" required [(ngModel)]="eventObj.imageUrl" >
@@ -107,4 +103,4 @@
     </div>
   </div>
 </div>
-
+ -->

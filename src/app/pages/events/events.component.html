@@ -17,7 +17,11 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
-        <div class="items-container row">
+        <div class="loader" *ngIf="FilterEvents.length == 0">
+             <div class="justify-content-center jimu-primary-loading"></div>
+        </div>
+        <div class="items-container">
+                <div class="items-container row">
             <div class="item col-12 col-md-6 col-lg-6" *ngFor="let item of FilterEvents | filter: searchTerm :'eventName'">
                 <div class="data" >
                     <div class="img-container" >
@@ -29,31 +33,33 @@
                          </div>
                          <div class="info-container">
                             <div class="con-name-price">
-                            <p class="name">{{item.eventName}}</p>
-                            <p class="price">price : <span class="price-number">${{item.price}}.00</span></p>
+                            <p class="name">{{item.EventName}}</p>
+                            <p class="price">price : <span class="price-number">${{item.EventPrice}}</span></p>
                             </div>
                             <div class="con-items">
                             <div class="item">
                                 <i class="fa-solid fa-circle-user"></i>
-                                <p>Organized By : <span class="organizer">{{item.organizerName}}</span></p>
+                                <p>Organized By : <span class="organizer">{{item.organizedName}}</span></p>
                             </div>
                             <div class="item">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>Location : <span class="location">{{item.location}}</span></p>
+                                <p>Location : <span class="location">{{item.EventLocation}}</span></p>
                             </div>
                             <div class="item">
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <div class="date">
-                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.startDate | date: 'dd-MM-yy'}}</p> 
-                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.endDate | date: 'dd-MM-yy'}} </p>
+                                <p class="start-date">StartDate : {{item.startmonthName}} {{item.StartDate | date: 'dd-MM-yy'}}</p> 
+                                <p class="start-date">EndDate : {{item.endmonthName}} {{item.EndDate | date: 'dd-MM-yy'}} </p>
                                 </div>
                             </div>
-                            <button [routerLink]="['/event-details/',item.eventId]" >Let's Go</button>
+                            <button [routerLink]="['/event-details/',item.id]" >Let's Go</button>
                             </div>
                      </div>
               </div>
-              </div>
+            </div>
+            </div>
+        </div>
         </div>
     </div>
-</div>
+
 

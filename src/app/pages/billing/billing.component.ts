@@ -39,7 +39,7 @@ constructor(private route: ActivatedRoute,public router:Router) {
   eventService=inject(EventService)
   EventId:any={}
 ngOnInit() {
-  const eventId = this.route.snapshot.paramMap.get('eventId');
+  const eventId = this.route.snapshot.paramMap.get('id');
     eventId && this.eventService.GetEventsById(Number(eventId)).subscribe((res: any) => {
     this.bookingObj.EventId = res.data.id || res.data.eventId;  // <= 
   const event = res.data;
@@ -106,7 +106,7 @@ this.form()
 
 
 
-   formvalue:any;
+
    onSubmit(){
     this.myform.value
   if (this.myform.invalid) {

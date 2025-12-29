@@ -46,17 +46,17 @@ export class CreateEventComponent {
 
 
   ngOnInit(): void {  
-    this.GetAllEvents();
+    // this.GetAllEvents();
    }
 
 
 
 
-  GetAllEvents(){ 
-    this.productSrv.GetAllEvents().subscribe((res:any)=>{ 
-      this.EventList=res.data;
-    })
-  };
+  // GetAllEvents(){ 
+  //   this.productSrv.GetAllEvents().subscribe((res:any)=>{ 
+  //     this.EventList=res.data;
+  //   })
+  // };
 
   // onupdate() {
   //     if (this.eventObj.startDate && this.eventObj.startDate.length === 10) {
@@ -77,16 +77,16 @@ export class CreateEventComponent {
   //   });
   // }
 
-  onupdate(){
-    this.productSrv.updateproduct(this.eventObj).subscribe((res:any)=>{
-      if(res.result){
-        alert("product updated");
-        this.GetAllEvents();
-      }else{
-        alert(res.message)
-      }
-    })
-  }
+  // onupdate(){
+  //   this.productSrv.updateproduct(this.eventObj).subscribe((res:any)=>{
+  //     if(res.result){
+  //       alert("product updated");
+  //       this.GetAllEvents();
+  //     }else{
+  //       alert(res.message)
+  //     }
+  //   })
+  // }
   //  onupdate() {
   //   // Format dates as required by the API
   //   if (this.eventObj.startDate && this.eventObj.startDate.length === 10) {
@@ -124,38 +124,37 @@ export class CreateEventComponent {
   //   }
   // }
 
-  onSave(){
-    this.productSrv.saveEvent(this.eventObj).subscribe((res:any)=>{
-      if(res.result){
-        alert("product created");
-        this.GetAllEvents();
-        // this.GetAllEventstempo();
-      }else{
-        alert(res.message)
-      }
-    })
-  }
+  // onSave(){
+  //   this.productSrv.saveEvent(this.eventObj).subscribe((res:any)=>{
+  //     if(res.result){
+  //       alert("product created");
+  //       this.GetAllEvents();
+  //       // this.GetAllEventstempo();
+  //     }else{
+  //       alert(res.message)
+  //     }
+  //   })
+  // }
 
 
-  onIdit(item:any){
-    this.eventObj=item;
-    this.opensidepanal()
-  }
+  // onIdit(item:any){
+  //   this.eventObj=item;
+  //   this.opensidepanal()
+  // }
 
-  ondelete(item: any){
-    const isdelete = confirm("are you sure");
-    if(isdelete){
-      this.productSrv.deleteproduct(item.eventId).subscribe((res:any)=>{
-        if(res.result){
-          alert("product deleted");
-          this.GetAllEvents();
-          // this.GetAllEventstempo();
-        }else{
-          alert(res.message)
-        }
-      })
-    }
-  }
+  // ondelete(item: any){
+  //   const isdelete = confirm("are you sure");
+  //   if(isdelete){
+  //     this.productSrv.deleteproduct(item.eventId).subscribe((res:any)=>{
+  //       if(res.result){
+  //         alert("product deleted");
+  //         this.GetAllEvents();
+  //       }else{
+  //         alert(res.message)
+  //       }
+  //     })
+  //   }
+  // }
 
 
 }

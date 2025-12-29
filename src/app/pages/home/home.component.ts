@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { EventService } from '../../events/event.service';
-import { IApiRespons, IEvent } from '../../model/model';
+// import { IApiRespons, IEvent } from '../../model/model';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import Swiper from 'swiper';
@@ -27,59 +27,17 @@ export class HomeComponent implements OnInit , AfterViewInit{
 
 
   }
-  EventList:IEvent[]=[]
+  EventList:any[]=[]
 
   getAllEvents(){
     this.eventService.GetAllEvents().subscribe((res:any)=>{
-      this.EventList = res.data.map((event: any) => {
-  if (event.startDate) {
-    // Handles "dd-MM-yyyy" format
-    let dateObj: Date;
-    if (/^\d{2}-\d{2}-\d{4}$/.test(event.startDate)) {
-      const [day, month, year] = event.startDate.split('-').map(Number);
-      dateObj = new Date(year, month - 1, day);
-    } else {
-      // Handles ISO or other formats
-      dateObj = new Date(event.startDate);
-    }
-    event.startmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
-    event.startmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
-  }
-  if(event.endDate){
-    // Handles "dd-MM-yyyy" format
-    let dateObj: Date;
-    if (/^\d{2}-\d{2}-\d{4}$/.test(event.endDate)) {
-      const [day, month, year] = event.endDate.split('-').map(Number);
-      dateObj = new Date(year, month - 1, day);
-    } else {
-      // Handles ISO or other formats
-      dateObj = new Date(event.endDate);
-    }
-    event.endmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
-    event.endmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
-  }
-   else {
-    event.monthNumber = '';
-    event.monthName = '';
-  }
-  return event;
-
-});
-
-
-
-
-
-
-
-
-
+      this.EventList = res
       setTimeout(() => {
       this.swiper();
     }, 0);
-    })
-
+     });
   }
+
   swiper(){
           var upcomingbox = new Swiper(".swiper", {
           spaceBetween:24,

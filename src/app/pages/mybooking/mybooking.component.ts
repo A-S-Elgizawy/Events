@@ -50,11 +50,11 @@ constructor(public router:Router){}
 
   eventService=inject(EventService)
 
-  getbookingbycustomer(){
-    this.eventService.getBookinbyCustomerId(this.Events[0].userId).subscribe((res:any)=>{
-      this.booking = res.data;
-  })
-}
+//   getbookingbycustomer(){
+//     this.eventService.getBookinbyCustomerId(this.Events[0].userId).subscribe((res:any)=>{
+//       this.booking = res.data;
+//   })
+// }
 }
 
 

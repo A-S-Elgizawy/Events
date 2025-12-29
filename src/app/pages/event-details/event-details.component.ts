@@ -1,7 +1,7 @@
 import { AfterViewChecked, AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { EventService } from '../../events/event.service';
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
-import { IApiRespons, IEvent } from '../../model/model';
+
 import { Observable } from 'rxjs';
 import { AsyncPipe, CommonModule, DatePipe } from '@angular/common';
 
@@ -16,48 +16,43 @@ export class EventDetailsComponent implements OnInit ,AfterViewInit{
 
   eventService=inject(EventService)
   activatedRoute=inject(ActivatedRoute)
-  EventData$:Observable<IEvent> = new Observable<IEvent>
-  Event$:Observable<IEvent[]> = new Observable<IEvent[]>
-  Event:any={}
+  EventData$:Observable<any> = new Observable<any>
+  Event$:Observable<any[]> = new Observable<any[]>
+  event:any={}
 constructor(public router:Router){
-    // this.activatedRoute.params.subscribe((param:any)=>{
-    // this.EventData$ =  this.eventService.GetEventsById(param.id)
-    // this.EventData$.subscribe((res:any)=>{
-    //   this.Event$ = this.eventService.GetEventsByOrganizer(res.organizerId)
-    // })
-    // })
+
 }
 
   getEventId(){
     const EventId = this.activatedRoute.snapshot.paramMap.get('id')
     EventId && this.eventService.GetEventsById(Number(EventId)).subscribe((res: any) => {
-  const event = res.data;
-  if (event.startDate) {
-    let dateObj: Date;
-    if (/^\d{2}-\d{2}-\d{4}$/.test(event.startDate)) {
-      const [day, month, year] = event.startDate.split('-').map(Number);
-      dateObj = new Date(year, month - 1, day);
-    } else {
-      dateObj = new Date(event.startDate);
-    }
-    event.startmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
-    event.startmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
-  }
-  if (event.endDate) {
-    let dateObj: Date;
-    if (/^\d{2}-\d{2}-\d{4}$/.test(event.endDate)) {
-      const [day, month, year] = event.endDate.split('-').map(Number);
-      dateObj = new Date(year, month - 1, day);
-    } else {
-      dateObj = new Date(event.endDate);
-    }
-    event.endmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
-    event.endmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
-  } else {
-    event.monthNumber = '';
-    event.monthName = '';
-  }
-  this.Event = event;
+    this.event = res
+
+  // if (event.startDate) {
+  //   let dateObj: Date;
+  //   if (/^\d{2}-\d{2}-\d{4}$/.test(event.startDate)) {
+  //     const [day, month, year] = event.startDate.split('-').map(Number);
+  //     dateObj = new Date(year, month - 1, day);
+  //   } else {
+  //     dateObj = new Date(event.startDate);
+  //   }
+  //   event.startmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
+  //   event.startmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
+  // }
+  // if (event.endDate) {
+  //   let dateObj: Date;
+  //   if (/^\d{2}-\d{2}-\d{4}$/.test(event.endDate)) {
+  //     const [day, month, year] = event.endDate.split('-').map(Number);
+  //     dateObj = new Date(year, month - 1, day);
+  //   } else {
+  //     dateObj = new Date(event.endDate);
+  //   }
+  //   event.endmonthNumber = isNaN(dateObj.getTime()) ? '' : (dateObj.getMonth() + 1);
+  //   event.endmonthName = isNaN(dateObj.getTime()) ? '' : dateObj.toLocaleString('default', { month: 'long' });
+  // } else {
+  //   event.monthNumber = '';
+  //   event.monthName = '';
+  // }
 });
     
   }
@@ -99,7 +94,7 @@ constructor(public router:Router){
     const EventId = this.activatedRoute.snapshot.paramMap.get('id');
     if (EventId) {
       this.eventService.GetEventsById(Number(EventId)).subscribe((res: any) => {
-        this.Event = res.data;
+        this.event = res;
       });
     }
   }

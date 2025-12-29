@@ -95,7 +95,11 @@
     margin-top: 3.5rem;
 }
 .mutaul{
-    font-size: clamp(1.2rem,2vw,2rem);
+    font-size: clamp(1rem,2vw,2rem);
     font-weight: 600;
+}
+.about .about-container .content .data .card-data p{
+   text-align: justify;
+   font-size: .9rem;
 }
 }

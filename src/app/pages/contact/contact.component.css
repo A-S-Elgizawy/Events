@@ -123,9 +123,27 @@
 }
 /* .container-input .contact-inputs .my-data .card-data .sochial span */
 
-@media (max-width:768px) {   
+@media (max-width:576px) {   
 .container-input {
     padding: 4rem 5%;
 }
+
+.container-input .contact-inputs .my-data{
+    padding-left: .5rem;
+}
+.container-input .contact-inputs .your-data{
+    padding-right: .5rem;
+}
     
+}
+
+
+.btnex{
+    padding: 0.5rem;
+    border: 1px solid black;
+    color: black;
+}
+.btnex.active{
+    border: 1px solid blue;
+    color: blue;
 }

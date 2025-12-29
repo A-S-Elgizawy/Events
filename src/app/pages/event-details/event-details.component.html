@@ -11,12 +11,12 @@
             
     <div class="event-details">
         <div class="event-container">
-             <div class="content row " *ngIf="Event as item">
+             <div class="content row ">
                  <div class="part-left col-12 col-md-12 col-lg-9">
                     <div class="card-item">
-                        <h2>{{item.eventName}}</h2>
+                        <h2>{{event.EventName}}</h2>
                         <div class="img-container">
-                            <img [src]="item.imageUrl" alt="">
+                            <img [src]="event.imageUrl" alt="">
                         </div>
                         <div class="items-container">
                         <div class="items">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="data">
                                 <p class="head">Event Date:</p>
-                                <p class="info"> {{item.startmonthName}} {{item.startDate | date:'dd-MM-yy'}}</p>
+                                <p class="info"> {{event.startmonthName}} {{event.startDate | date:'dd-MM-yy'}}</p>
                             </div>
                         </div>
                         <div class="items">
@@ -34,7 +34,7 @@
                             </div>
                             <div class="data">
                                 <p class="head">Event Time:</p>
-                                <p class="info">{{item.startTime}} am</p>
+                                <p class="info">{{event.startTime}} am</p>
                             </div>
                         </div>
                         <div class="items">
@@ -43,12 +43,12 @@
                             </div>
                             <div class="data">
                                 <p class="head">Event Location:</p>
-                                <p class="info">{{item.location}}</p>
+                                <p class="info">{{event.EventLocation}}</p>
                             </div>
                         </div>
                         </div>
                         <div class="describtion">
-                            <p>{{item.description}}</p>
+                            <p>{{event.description}}</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, cumque aliquid inventore, vero eum debitis temporibus quisquam accusamus magnam expedita laboriosam, quidem earum repellat omnis enim consequatur iure dolor doloremque.</p>
                         </div>
                         <div class="event-line">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="event-line-items">
                                 <p class="head">Opening Prayer</p>
-                                <p class="info">{{item.startmonthName}} {{item.startDate | date:'dd-MM-yy'}}</p>
+                                <p class="info">{{event.startmonthName}} {{event.startDate | date:'dd-MM-yy'}}</p>
                             </div>
                             <div class="event-line-items">
                                 <p class="head">Welcome Message by Director of Dikupages Web</p>
@@ -114,7 +114,7 @@
                                         <p class="total">Total: <span class="Totalnumber">${{ totalPrice }}.00</span></p>
                                     </div>
                                     <div class="foot ">
-                                        <div class="registerEvent" [routerLink]="['/billing', Event.eventId]">
+                                        <div class="registerEvent" [routerLink]="['/billing', event.id]">
                                             <i class="fa-solid fa-cart-plus"></i>
                                             <p>REGISTER FOR THIS EVENT</p>
                                         </div>
@@ -124,13 +124,13 @@
                     </div>  
                  </div>
                         
-                 <div class="part-right col-12 col-md-12 col-lg-3 " *ngIf="Event as item">
+                 <div class="part-right col-12 col-md-12 col-lg-3 " >
                     <div class="card-item">
                          <p class="heading">Total Seats:150 (145 Left:)</p>
                          <div class="first-part">
                          <div class="con-organizer">
                              <i class="fa-solid fa-circle-user"></i>
-                             <p class="organizer">By : Unknown<span>{{item.organizerName}}</span> </p>
+                             <p class="organizer">By : <span>{{event.organizedName}}</span> </p>
                          </div>
                          <div class="data">
                             <div class="item">
@@ -165,7 +165,7 @@
                                 <div class="icon">
                                 <div class="icon-con"><i class="fa-solid fa-calendar-days"></i></div>
                                 </div>
-                                <p>{{item.startDate | date : 'dd-MM-yy'}} <br> {{item.endDate | date : 'dd-MM-yy'}}</p>
+                                <p>{{event.StartDate | date : 'dd-MM-yy'}} <br> {{event.EndDate | date : 'dd-MM-yy'}}</p>
                                 
                             </div>
                          </div>
